@@ -29,15 +29,10 @@ public class ResponseWrapper {
         return response.getStatusCode();
     }
 
-    public ResponseWrapper assertStatusCode(int expectedStatusCode) {
+    public void assertStatusCode(int expectedStatusCode) {
         assertThat(getStatusCode()).isEqualTo(expectedStatusCode);
-        return this;
     }
 
-    public ResponseWrapper printResponseToConsole() {
-        response.prettyPrint();
-        return this;
-    }
 
     public static void assertSoftly(Consumer<SoftAssertions> softly) {
         SoftAssertionsProvider.assertSoftly(SoftAssertions.class, softly);
