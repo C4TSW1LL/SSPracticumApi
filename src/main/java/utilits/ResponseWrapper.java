@@ -1,12 +1,10 @@
 package utilits;
 
-import dto.DataPokemon;
 import io.restassured.response.Response;
 import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.SoftAssertionsProvider;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -36,14 +34,6 @@ public class ResponseWrapper {
 
     public static void assertSoftly(Consumer<SoftAssertions> softly) {
         SoftAssertionsProvider.assertSoftly(SoftAssertions.class, softly);
-    }
-
-    public List<String> getAbilitiesName(List<DataPokemon.AbilitiesItem> abilities) {
-        List<String> abilitiesName = new ArrayList<>();
-        for (DataPokemon.AbilitiesItem element : abilities) {
-            abilitiesName.add(element.getAbility().getName());
-        }
-        return abilitiesName;
     }
 }
 

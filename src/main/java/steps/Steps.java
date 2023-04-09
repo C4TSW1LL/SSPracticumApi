@@ -10,8 +10,7 @@ import static io.restassured.RestAssured.given;
 
 @RequiredArgsConstructor
 public class Steps {
-
-    private final RequestSpecification requestSpecification;
+    protected final RequestSpecification requestSpecification;
     private static final String BASE_URL = "pokemon/";
 
     @Step("GET запрос на получение данных покемона по имени")
